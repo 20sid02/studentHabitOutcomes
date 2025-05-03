@@ -1,7 +1,7 @@
-## Linear Regression Model for Student Habits and Exam Scores
+## Decision Tree Regression Model for Student Habits and Exam Scores
 
 ### Overview
-In this part of the project, we used **linear regression analysis** to predict **student exam scores** based on various habits and lifestyle factors. The goal was to explore the relationship between student behavior and academic performance, leveraging machine learning techniques to identify key features that drive exam success.
+In this part of the project, we used **decision tree regression analysis** to predict **student exam scores** based on various habits and lifestyle factors. The goal was to explore the relationship between student behavior and academic performance, leveraging machine learning techniques to identify key features that drive exam success.
 
 ### Features Used
 The selected features for the regression model included:
@@ -22,7 +22,7 @@ The selected features for the regression model included:
    - Additionally, a **decision tree regressor** was used to identify the most important features contributing to exam scores.
 
 3. **Modeling:**
-   - A **linear regression model** was applied to predict exam scores. The model was evaluated using **mean squared error (MSE)** and **R-squared (R²)** metrics to assess its predictive accuracy.
+   - A **regression model** was applied to predict exam scores. The model was evaluated using **mean squared error (MSE)** and **R-squared (R²)** metrics to assess its predictive accuracy.
    - A **cross-validation** strategy was employed to ensure model robustness.
 
 4. **Results:**
@@ -36,4 +36,8 @@ The regression model was evaluated using various metrics:
 - **Cross-Validation Score**: 0.89 (consistent performance across folds).
 
 ### Conclusion
-The linear regression model effectively predicts student exam scores based on a variety of lifestyle factors. Insights from the model can guide interventions to improve student habits for better academic performance.
+The Tree regression model effectively predicts student exam scores based on a variety of lifestyle factors. Insights from the model can guide interventions to improve student habits for better academic performance.
+
+### Future Work
+- Implement Regularization and use Linear regression.
+- Use Random Forest trees, if possible.
