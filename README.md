@@ -1,39 +1,49 @@
-## Linear Regression Model for Student Habits and Exam Scores
+## Clustering Model for Student Habits
 
 ### Overview
-In this part of the project, we used **linear regression analysis** to predict **student exam scores** based on various habits and lifestyle factors. The goal was to explore the relationship between student behavior and academic performance, leveraging machine learning techniques to identify key features that drive exam success.
-
-### Features Used
-The selected features for the regression model included:
-- **Study Hours per Day**
-- **Social Media Hours**
-- **Netflix Hours**
-- **Attendance Percentage**
-- **Sleep Hours**
-- **Exercise Frequency**
-- **Mental Health Rating**
+In this section of the project, we applied **unsupervised machine learning** techniques to cluster students based on their habits, behaviors, and lifestyle factors. The goal was to segment students into meaningful groups that share similar characteristics, helping to understand how their behaviors relate to their academic performance.
 
 ### Approach
+We used the **K-Means clustering algorithm** to group students into clusters based on various features like **study hours**, **sleep hours**, **exercise frequency**, **mental health rating**, and other lifestyle factors. The dataset used in this part contains information on students' habits and their respective academic performances.
+
+#### Steps Taken:
 1. **Data Preprocessing:**
-   - Cleaned and transformed the data by handling missing values, encoding categorical variables, and scaling the features to ensure consistency across the dataset.
+   - The dataset was cleaned by handling missing values and converting categorical features into numerical labels for clustering.
+   - Features like **study hours**, **attendance percentage**, **mental health rating**, and **sleep hours** were selected to perform clustering.
+
+2. **Feature Engineering and Scaling:**
+   - **Standard scaling** was applied to the features to ensure that they were on the same scale and the clustering algorithm wouldn’t be biased toward higher magnitude features.
+   - **PCA (Principal Component Analysis)** was also applied to reduce dimensionality and help visualize the clusters in 2D or 3D plots, especially when dealing with high-dimensional data.
+
+3. **Clustering with K-Means:**
+   - The **K-Means** algorithm was used to create **4 clusters** (based on the visualization and analysis). K-Means groups students into clusters such that the variance within each group is minimized.
+   - The optimal number of clusters was determined using techniques like **elbow method** or visualizations like **pairplots** and **PCA scatter plots**.
+
+4. **Model Evaluation:**
+   - **Silhouette score** was used to evaluate the quality of the clusters, measuring how similar an object is to its own cluster compared to other clusters.
+   - The clusters were visually inspected through **pair plots** and **PCA plots** to see how distinct and well-separated the groups were.
    
-2. **Feature Engineering:**
-   - We performed several feature extraction techniques, such as combining correlated features (e.g., study and sleep habits) and dimensionality reduction with **PCA** for weaker features.
-   - Additionally, a **decision tree regressor** was used to identify the most important features contributing to exam scores.
+5. **Cluster Analysis:**
+   - After clustering, the mean of the features within each cluster was calculated to understand the characteristics of each group.
+   - The clusters were then labeled based on the student habits:
+     - **Balanced but Inactive**
+     - **Distracted Media Users**
+     - **High Achievers**
+     - **Working Students**
+   - Each group showed distinct patterns in terms of academic performance, attendance, study habits, and lifestyle.
 
-3. **Modeling:**
-   - A **linear regression model** was applied to predict exam scores. The model was evaluated using **mean squared error (MSE)** and **R-squared (R²)** metrics to assess its predictive accuracy.
-   - A **cross-validation** strategy was employed to ensure model robustness.
-
-4. **Results:**
-   - The **best regression model** achieved an **R² score of 0.90** and an **MSE of 25**, indicating a **strong predictive performance**.
-   - Feature importance analysis showed that **study hours**, **mental health rating**, and **attendance percentage** were the most significant predictors of exam performance.
-
-### Model Evaluation
-The regression model was evaluated using various metrics:
-- **Accuracy Score**: 0.90 (indicating good predictive power).
-- **Mean Squared Error (MSE)**: 25 (lower error means better model).
-- **Cross-Validation Score**: 0.89 (consistent performance across folds).
+### Results
+- The K-Means clustering algorithm successfully grouped students into meaningful clusters based on their habits.
+- The **PCA scatter plots** showed clear distinctions between clusters, confirming the effectiveness of the clustering process.
+- Cluster analysis revealed that **High Achievers** had better attendance and study habits, while **Distracted Media Users** spent more time on social media and Netflix.
 
 ### Conclusion
-The linear regression model effectively predicts student exam scores based on a variety of lifestyle factors. Insights from the model can guide interventions to improve student habits for better academic performance.
+This clustering analysis provides valuable insights into student behavior patterns. By identifying clusters of students with similar habits, this analysis can help educators tailor their strategies to improve academic performance for different groups. It also shows how unsupervised learning can uncover hidden patterns and groupings in complex datasets.
+
+### Key Insights:
+- The four identified clusters had significant differences in terms of study habits, media consumption, and academic performance.
+- The clustering analysis can help in understanding how lifestyle choices like media consumption and exercise affect student performance.
+
+### Future Work:
+- Further refinement can be done by trying different clustering algorithms such as **DBSCAN** or **Hierarchical Clustering**.
+- Adding more features (e.g., parental education or socioeconomic status) could lead to more detailed clusters.
