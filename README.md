@@ -45,5 +45,5 @@ This clustering analysis provides valuable insights into student behavior patter
 - The clustering analysis can help in understanding how lifestyle choices like media consumption and exercise affect student performance.
 
 ### Future Work:
-- Further refinement can be done by trying different clustering algorithms such as **DBSCAN** or **Hierarchical Clustering**.
-- Adding more features (e.g., parental education or socioeconomic status) could lead to more detailed clusters.
+- Further refine and implement different clustering algorithms such as **DBSCAN** or **Hierarchical Clustering**.
+- Tuning the models and using other feture extraction and decomposition techniques like t-SNE.
